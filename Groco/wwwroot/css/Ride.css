@@ -1,0 +1,78 @@
+﻿html {
+    font-size: 62.5%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body {
+    background: #eee;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0rem 2rem;
+    background: #ff7800;
+    box-shadow: var(--box-shadow);
+}
+
+.navbar-inner {
+    width:auto;
+    font-size: 2rem;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.datetime-picker .label2 {
+    margin-left: 5rem;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #f8f8f8;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor:default;
+}
+
+.dropdown-content {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 2px;
+    margin-right: 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.datetime-picker {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.datetime-picker input{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 2px;
+    border-radius:6px;
+    margin-right:2rem;
+    margin-left:1rem;
+    cursor:pointer;
+}

@@ -1,0 +1,565 @@
+﻿@model Groco.Models.LoginModel
+<!DOCTYPE html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="~/css/gooco.css" rel="stylesheet" />
+</head>
+<body>
+    @*Header Section Starts*@
+    <header class="header">
+
+        <a href="#" class="logo m-1"><i class="fa fa-motorcycle"></i>BikeGo</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#product">Products</a>
+            <a href="#categories">Categories</a>
+            <a href="#review">Review </a>
+            <a href="#faq">FAQs</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-user" id="login-btn">  </div>
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here..." />
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="shopping-cart">
+           @* <div class="box">
+                <i class="fas fa-trash"></i>
+                <img src="~/img/1.png" alt="" />
+                <div class="content">
+                    <h3 class="productName">Puslar 220</h3>
+                    <span class="price">$3000/-</span>
+                    <span class="quantity">Qyt: 1</span>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-trash"></i>
+                <img src="~/img/2.png" alt="" />
+                <div class="content">
+                    <h3 class="productName">Puslar 150</h3>
+                    <span class="price">$2000/-</span>
+                    <span class="quantity">Qyt: 1</span>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-trash"></i>
+                <img src="~/img/3.png" alt="" />
+                <div class="content">
+                    <h3 class="productName">Puslar 180</h3>
+                    <span class="price">$1000/-</span>
+                    <span class="quantity">Qyt: 1</span>
+                </div>
+            </div>*@
+            <div class="total"> total: </div>
+            <a href="#" class="btn">checkout</a>
+        </div>
+
+        <form asp-controller="Home" asp-action="LoginSubmit" class="login-form">
+            <h3>Login</h3>
+            <div class="d-flex box" style="height:45px">
+                <input type="email" placeholder="Enter Email" class="box" />
+            </div>
+            <div class="d-flex box"  style="height:45px">
+                <input type="password" placeholder="Enter Password" class="box password-input" id="password" />
+                <button type="button" class="password-toggle-btn">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+
+        <p id="PlaceHolderforgot">Forget Password <a data-toggle="ajax-modal-forget" id="forgetLink" data-target="#forget" data-url="@Url.Action("ForgetPassward", "Home")">click here</a></p>
+        <p id="PlaceHolderNew">Don't have an account <a data-toggle="ajax-modal-new" id="newLink" data-target="#new" data-url="@Url.Action("NewUser", "Home")">click here</a></p>
+        <input type="submit" value="Login Now" class="btn">
+        </form>
+
+    </header>
+
+    @*Header Section Ends
+    Home Section Starts*@
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Welcome to <span>BikeGo</span> - Your Ultimate Destination for Convenient and Affordable Bike Rentals!</h3>
+            <P>BikeGo offers hassle-free bike rentals for your urban adventures. With a wide selection of bikes and flexible rental options, discover the joy of cycling at affordable rates. Explore the city on two wheels with BikeGo!</P>
+            <div class="navbar-inner">
+                <div class="dropdown">
+                    <label class="dropbtn">Choose City</label>
+                    <select class="dropdown-content">
+                        <option value="">Select a city</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="Ahemdabad">Ahemdabad</option>
+                    </select>
+                </div>
+                <div class="datetime-picker">
+                    <label for="startDateTime">Start Date & Time</label>
+                    <input type="datetime-local" id="startDateTime" name="startDateTime">
+                </div>
+                <div class="datetime-picker">
+                    <label for="endDateTime" class="">End Date & Time</label>
+                    <input type="datetime-local" id="endDateTime" name="endDateTime">
+                </div>
+            </div>
+            <a href="@Url.Action("RideNow", "Home")" class="btn">Ride Now</a>
+        </div>
+    </section>
+
+    @*Home Section ends
+    features Section Starts*@
+    <section class="features" id="features">
+        <h1 class="heading">our<span>features</span></h1>
+        <div class="box-container">
+
+            <div class="box">
+                <img src="~/img/EasyBooking.png" alt="" />
+                <h3>Easy Booking and Rental Process</h3>
+                <p>A streamlined and user-friendly booking system that allows customers to quickly select their desired bike, rental duration, and pickup/drop-off locations. Simplifying the process enhances user experience and encourages more rentals.</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+            <div class="box">
+                <img src="~/img/Quantity.jpg" alt="" />
+                <h3>Bike Availability and Quality</h3>
+                <p>Providing real-time information on bike availability and ensuring that all rental bikes are well-maintained and in excellent condition. Reliable and quality bikes build customer trust and satisfaction.</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+            <div class="box">
+                <img src="~/img/safety.jpg" alt="" />
+                <h3>Safety and Regulations</h3>
+                <p>Emphasizing safety by offering safety gear (helmets, reflective vests) and providing guidelines on safe biking practices and local traffic regulations. Prioritizing safety fosters a positive customer experience and encourages repeat business.</p>
+                <a href="#" class="btn">Read more</a>
+            </div>
+
+        </div>
+    </section>
+
+    @*features Section ends
+    product section Starts*@
+    <section class="product" id="product">
+        <h1 class="heading">our<span>products</span></h1>
+
+        @*product milege bikes*@
+        <div class="swiper product-slider" id="milege_Bike">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <img src="~/img/Milege_Bikes/platina-110.png" alt="" />
+                    <h3>platina-110</h3>
+                    <div class="price">50/- per Hour</div>
+                    <div class="price">200/- per day</div>
+                    <div class="price">800/- per week</div>
+                    <div class="price">2500/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Milege_Bikes/sp-125.png" alt="" />
+                    <h3>sp-125</h3>
+                    <div class="price">50/- per Hour</div>
+                    <div class="price">200/- per day</div>
+                    <div class="price">800/- per week</div>
+                    <div class="price">2500/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Milege_Bikes/splendor.png" alt="" />
+                    <h3>splendor</h3>
+                    <div class="price">50/- per Hour</div>
+                    <div class="price">200/- per day</div>
+                    <div class="price">800/- per week</div>
+                    <div class="price">2500/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Milege_Bikes/TVS-sport-.png" alt="" />
+                    <h3>TVS-sports</h3>
+                    <div class="price">50/- per Hour</div>
+                    <div class="price">200/- per day</div>
+                    <div class="price">800/- per week</div>
+                    <div class="price">2500/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Milege_Bikes/platina-110.png" alt="" />
+                    <h3>platina-110</h3>
+                    <div class="price">50/- per Hour</div>
+                    <div class="price">200/- per day</div>
+                    <div class="price">800/- per week</div>
+                    <div class="price">2500/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Milege_Bikes/sp-125.png" alt="" />
+                    <h3>sp-125</h3>
+                    <div class="price">50/- per Hour</div>
+                    <div class="price">200/- per day</div>
+                    <div class="price">800/- per week</div>
+                    <div class="price">2500/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+            </div>
+        </div>
+
+        @*product scooty*@
+        <div class="swiper product-slider" id=scooty_Bike>
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <img src="~/img/Scooty/honda-activa.png" alt="" />
+                    <h3>honda-activa</h3>
+                    <div class="price">70/- per Hour</div>
+                    <div class="price">300/- per day</div>
+                    <div class="price">1000/- per week</div>
+                    <div class="price">3600/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Scooty/ola-s1.png" alt="" />
+                    <h3>ola-s1</h3>
+                    <div class="price">70/- per Hour</div>
+                    <div class="price">300/- per day</div>
+                    <div class="price">1000/- per week</div>
+                    <div class="price">3600/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Scooty/suziki access 125.png" alt="" />
+                    <h3>suziki access 125</h3>
+                    <div class="price">70/- per Hour</div>
+                    <div class="price">300/- per day</div>
+                    <div class="price">1000/- per week</div>
+                    <div class="price">3600/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Scooty/tvs-jupiter.png" alt="" />
+                    <h3>tvs-jupiter</h3>
+                    <div class="price">70/- per Hour</div>
+                    <div class="price">300/- per day</div>
+                    <div class="price">1000/- per week</div>
+                    <div class="price">3600/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Scooty/tvs-ntorq.png" alt="" />
+                    <h3>tvs-ntorq</h3>
+                    <div class="price">70/- per Hour</div>
+                    <div class="price">300/- per day</div>
+                    <div class="price">1000/- per week</div>
+                    <div class="price">3600/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Scooty/yamaha-scooty.jpg" alt="" />
+                    <h3>yamaha-scooty</h3>
+                    <div class="price">70/- per Hour</div>
+                    <div class="price">300/- per day</div>
+                    <div class="price">1000/- per week</div>
+                    <div class="price">3600/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+            </div>
+        </div>
+
+        @*product sports bikes*@
+        <div class="swiper product-slider" id="sports_Bike">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <img src="~/img/Sports Bike/bajaj-pulsar-220.png" alt="" />
+                    <h3>bajaj-pulsar-220</h3>
+                    <div class="price">100/- per Hour</div>
+                    <div class="price">500/- per day</div>
+                    <div class="price">1500/- per week</div>
+                    <div class="price">6000/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Sports Bike/bajaj-pulsar-rs-200.png" alt="" />
+                    <h3>bajaj-pulsar-rs-200</h3>
+                    <div class="price">100/- per Hour</div>
+                    <div class="price">500/- per day</div>
+                    <div class="price">1500/- per week</div>
+                    <div class="price">6000/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Sports Bike/bajaj-pulsarns-125-.png" alt="" />
+                    <h3>bajaj-pulsarns-125</h3>
+                    <div class="price">100/- per Hour</div>
+                    <div class="price">500/- per day</div>
+                    <div class="price">1500/- per week</div>
+                    <div class="price">6000/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Sports Bike/honda-hornet.png" alt="" />
+                    <h3>honda-hornet</h3>
+                    <div class="price">100/- per Hour</div>
+                    <div class="price">500/- per day</div>
+                    <div class="price">1500/- per week</div>
+                    <div class="price">6000/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Sports Bike/ktm-rc125.png" alt="" />
+                    <h3>ktm-rc125</h3>
+                    <div class="price">100/- per Hour</div>
+                    <div class="price">500/- per day</div>
+                    <div class="price">1500/- per week</div>
+                    <div class="price">6000/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Sports Bike/tvs-raider.png" alt="" />
+                    <h3>tvs-raider</h3>
+                    <div class="price">100/- per Hour</div>
+                    <div class="price">500/- per day</div>
+                    <div class="price">1500/- per week</div>
+                    <div class="price">6000/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Sports Bike/tvs-apache-rtr-200.png" alt="" />
+                    <h3>tvs-apache-rtr-200</h3>
+                    <div class="price">100/- per Hour</div>
+                    <div class="price">500/- per day</div>
+                    <div class="price">1500/- per week</div>
+                    <div class="price">6000/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Sports Bike/yamaha-mt-15.png" alt="" />
+                    <h3>yamaha-mt-15</h3>
+                    <div class="price">100/- per Hour</div>
+                    <div class="price">500/- per day</div>
+                    <div class="price">1500/- per week</div>
+                    <div class="price">6000/- per month</div>
+                    <a href="#home" class="btn">Rent Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @*product section ends
+    catogary Section Starts*@
+    <section class="categories" id="categories">
+        <h1 class="heading">product <span>categories</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="~/img/category/sports.png" alt="" />
+                <h3>Sports Bike</h3>
+                <h6>Rent a Sports Bike</h6>
+                <p>100/- per Hour</p>
+                <p>500/- per day</p>
+                <p>1500/- per week</p>
+                <p>6000/- per month</p>Flogin
+                <a href="#sports_Bike" class="btn">Rent now</a>
+            </div>
+            <div class="box">
+                <img src="/img/category/scooty.png" alt="" />
+                <h3>Scooty</h3>
+                <h6>Rent a Scooty</h6>
+                <p>70/- per Hour</p>
+                <p>300/- per day</p>
+                <p>1000/- per week</p>
+                <p>3600/- per month</p>
+                <a href="#scooty_Bike" class="btn">Rent now</a>
+            </div>
+            <div class="box">
+                <img src="/img/category/milege.png" alt="" />
+                <h3>Mileage Bikes</h3>
+                <h6>Rent a mileage Bike</h6>
+                <p>50/- per Hour</p>
+                <p>200/- per day</p>
+                <p>800/- per week</p>
+                <p>2500/- per month</p>
+                <a href="#milege_Bike" class="btn">Rent now</a>
+            </div>
+        </div>
+    </section>
+
+    @*catogary Section Ends
+    Review Section Starts*@
+    <section class="review" id="review">
+        <h1 class="heading">Customer's <span>review</span></h1>
+        <div class="swiper review-slider">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <img src="~/img/Reviewer/p1.png" alt="" />
+                    <p>Excellent service! The booking process was super easy, and the bikes were in top-notch condition. Loved the wide range of bike options available. Will definitely rent from here again</p>
+                    <h3>Abhinav</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Reviewer/p2.png" alt="" />
+                    <p>Great experience overall. Bikes were well-maintained, and the staff was helpful. The only suggestion would be to offer more accessories like baskets and phone holders</p>
+                    <h3>Abhishek</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Reviewer/p3.png" alt="" />
+                    <p>Outstanding! Safety was a top priority. They provided helmets and briefed us on biking rules. The bikes were comfortable, and we had a blast exploring the city. Highly recommended!</p>
+                    <h3>Yash</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Reviewer/p4.png" alt="" />
+                    <p>Impressed by their attention to detail. Bikes were clean, and the staff took the time to adjust them to our comfort. The QR code system for unlocking was smooth.</p>
+                    <h3>Shubham</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="~/img/Reviewer/p4.png" alt="" />
+                    <p>Had a fun ride with friends. The app worked well for booking, but I wish there was an option for longer rental durations. Maybe consider adding weekly rates.</p>
+                    <h3>Salman</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    @*Review Section Ends
+    Blogs Section Starts*@
+
+    @*<section class="blogs" id="blogs">
+    <h1 class="heading">our <span>blogs</span></h1>
+    <div class="box-container">
+
+    <div class="box">
+    <img src="" alt="" />
+    <div class="content">
+    <div class="icons">
+    <a href="#"><i class="fas fa-user"></i> by user </a>
+    <a href="#"><i class="fas fa-calendar"></i> 1st may, 2021 </a>
+    </div>
+    <h3></h3>
+    <p></p>
+    <a href="#" class="btn">read more</a>
+    </div>
+    </div>
+    </div>
+    </section>*@
+
+    @*Blogs Section Ends
+    FAQ Section Starts*@
+    <section class="faq" id="faq">
+        <h1 class="heading">Top <span>FAQs</span></h1>
+        <p class="para">Renting a Bike should be Easy, Like our FAQs.</p>
+        <div class="box-container">
+            <div class="box">
+                <h6> <i class="fa fa-circle"></i>  How do I pay?</h6>
+                <p>You can pay online using debit/credit card or e-wallets. You can also pay at the hub station during your vehicle pick-up</p>
+            </div>
+            <div class="box">
+                <h6> <i class="fa fa-circle"></i>  Will I be getting a complimentary helmet?</h6>
+                <p>
+                    One complimentary helmet is provided at no additional cost.
+                    An additional helmet (Extra) can be rented from the station for Rs. 50.
+                    Customers can only rent 2 helmets per booking.
+                    A fee of Rs. 800 will be imposed if the helmet is damaged or lost
+                </p>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <h6> <i class="fa fa-circle"></i>  What documents do I need to show while booking?</h6>
+                <p>Customer must handover his/ her original Driving License during pick up of bike at the station to the delivery executive. It is mandatory to handover a local address proof/ Company ID copy/ Hotel Receipt/ or any other recognised local address proof to the delivery executive</p>
+            </div>
+            <div class="box">
+                <h6> <i class="fa fa-circle"></i> Where can I pick up the bike from?</h6>
+                <p>While booking your bike, you’ll be given an option to select a pick-up location in your vicinity</p>
+            </div>
+        </div>
+    </section>
+
+    @*FAQ Section Ends
+    footer Section Starts*@
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>RideGo <i class="fas fa-motorcycle"></i></h3>
+                <p></p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div>
+            </div>
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#" class="links"><i class="fas fa-phone"></i>+91-9431613162</a>
+                <a href="#" class="links"><i class="fas fa-phone"></i>+91-9431613162</a>
+                <a href="#" class="links"><i class="fas fa-envelope"></i>rideGo@gmail.com</a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i>Ahmedabad, India</a>
+            </div>
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> home </a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> features </a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> products </a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> categories </a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> review </a>
+                <a href="#" class="links"><i class="fas fa-arrow-right"></i> blogs </a>
+            </div>
+            <div class="box">
+                <h3>newsletter</h3>
+                <p>Subscribe for latest update</p>
+                <input type="email" placeholder="your email" class="email" />
+                <input type="submit" placeholder="subscribe" class="btn" />
+                <img src="" class="payment-img" alt="" />
+            </div>
+        </div>
+        <div class="credit">created by <span> Biswajit Mandal</span> | all rights reversed</div>
+    </section>
+
+</body>
+
+
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="~/js/groco.js"></script>
+    <script src="~/js/Ride.js"></script>
+}
