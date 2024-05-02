@@ -24,7 +24,7 @@
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
             <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fa-solid fa-heart" id="cart-btn"></div>
             <div class="fas fa-user" id="login-btn">  </div>
         </div>
 
@@ -34,8 +34,8 @@
         </form>
 
         <div class="shopping-cart">
-           @* <div class="box">
-                <i class="fas fa-trash"></i>
+           <div class="box">
+                <i class="fa-solid fa-heart"></i>
                 <img src="~/img/1.png" alt="" />
                 <div class="content">
                     <h3 class="productName">Puslar 220</h3>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="box">
-                <i class="fas fa-trash"></i>
+                <i class="fa-solid fa-heart"></i>
                 <img src="~/img/2.png" alt="" />
                 <div class="content">
                     <h3 class="productName">Puslar 150</h3>
@@ -53,16 +53,15 @@
                 </div>
             </div>
             <div class="box">
-                <i class="fas fa-trash"></i>
+                <i class="fa-solid fa-heart"></i>
                 <img src="~/img/3.png" alt="" />
                 <div class="content">
                     <h3 class="productName">Puslar 180</h3>
                     <span class="price">$1000/-</span>
                     <span class="quantity">Qyt: 1</span>
                 </div>
-            </div>*@
-            <div class="total"> total: </div>
-            <a href="#" class="btn">checkout</a>
+            </div>
+            <a href="@Url.Action("RideNow", "Home")" class="btn">Ride Now</a>
         </div>
 
         <form asp-controller="Home" asp-action="LoginSubmit" class="login-form">
@@ -362,7 +361,7 @@
                 <p>100/- per Hour</p>
                 <p>500/- per day</p>
                 <p>1500/- per week</p>
-                <p>6000/- per month</p>Flogin
+                <p>6000/- per month</p>
                 <a href="#sports_Bike" class="btn">Rent now</a>
             </div>
             <div class="box">

@@ -392,19 +392,19 @@ section {
                 color: #fff;
             }
 
-        .home .content .datetime-picker {
+        .home .content .navbar-inner .datetime-picker {
             color: #fff;
             display: inline-block;
             vertical-align: middle;
         }
 
-            .home .content .datetime-picker input {
+            .home .content .navbar-inner .datetime-picker input {
                 border-radius: 6px;
                 cursor: pointer;
                 border: .2rem solid #fff;
             }
 
-                .home .content .datetime-picker input:hover {
+                .home .content .navbar-inner .datetime-picker input:hover {
                     background: var(--orange);
                     color: #fff;
                 }

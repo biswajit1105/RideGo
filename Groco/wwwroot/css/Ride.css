@@ -1,4 +1,4 @@
-﻿html {
+﻿/*html {
     font-size: 62.5%;
     overflow: hidden;
     scroll-behavior: smooth;
@@ -7,7 +7,7 @@
 
 body {
     background: #eee;
-}
+}*/
 
 .header {
     position: fixed;
@@ -16,23 +16,21 @@ body {
     right: 0;
     z-index: 1000;
     padding: 0rem 2rem;
-    background: #ff7800;
+    background: #fff;
     box-shadow: var(--box-shadow);
 }
 
-.navbar-inner {
-    width:auto;
-    font-size: 2rem;
-    display: flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction: row;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f8f8f8;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
+    .header .navbar-inner {
+        width: auto;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        border-radius: 10px;
+        background-color: #ff7800;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
 .datetime-picker .label2 {
     margin-left: 5rem;
@@ -44,12 +42,9 @@ body {
 }
 
 .dropbtn {
-    background-color: #f8f8f8;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor:default;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
 }
 
 .dropdown-content {
@@ -76,3 +71,58 @@ body {
     margin-left:1rem;
     cursor:pointer;
 }
+
+.categories .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 2rem;
+}
+
+    .categories .heading {
+        text-align: center;
+        padding: 2rem 0;
+        padding-bottom: 3rem;
+        font-size: 3.5rem;
+        color: var(--black);
+    }
+
+    .categories .box-container .box {
+        background: #fff;
+        border-radius: .5rem;
+        text-align: center;
+        padding: 3rem 2rem;
+        outline-offset: -1rem;
+        outline: var(--outline);
+        box-shadow: var(--box-shadow);
+        margin-bottom: .5rem;
+        border: 2px solid black;
+    }
+
+        .categories .box-container .box:hover {
+            outline: var(--outline-hover);
+            outline-offset: 0rem;
+        }
+
+        .categories .box-container .box img {
+            margin: 1rem 0;
+            height: 15rem;
+        }
+
+        .categories .box-container .box h3 {
+            font-size: 2rem;
+            color: var(--black);
+            line-height: 1.2;
+        }
+
+        .categories .box-container .box h6 {
+            font-size: 1.5rem;
+            color: var(--orange);
+            line-height: 1.8;
+        }
+
+        .categories .box-container .box p {
+            font-size: 1.5rem;
+            color: var(--black);
+            line-height: 0;
+            padding: 0.3rem 0;
+        }
