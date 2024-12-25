@@ -171,6 +171,17 @@ namespace Groco.Controllers
             return View();
         }
 
+        public IActionResult RentNow()
+        {
+            RentContact user = new();
+            return PartialView("RentNow", user);
+        }
+
+        public IActionResult RentContactSet()
+        {
+            return PartialView();
+        }
+
         #endregion
     }
 }
